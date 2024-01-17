@@ -18,10 +18,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-mongoose.connect(process.env.MONGODB, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGODB);
 
 app.use(router);
 
