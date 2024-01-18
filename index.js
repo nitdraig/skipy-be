@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://skipy.vercel.app",
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
   })
