@@ -19,7 +19,9 @@ app.use(
   })
 );
 
-mongoose.connect(process.env.MONGODB);
+mongoose.connect(process.env.MONGODB, {
+  serverSelectionTimeoutMS: 30000,
+});
 
 app.use(router);
 
