@@ -1,5 +1,6 @@
 // routes/linkRoutes.js
 import express from "express";
+import cors from "cors";
 import {
   createShortLink,
   redirectToOriginalUrl,
@@ -7,15 +8,8 @@ import {
 
 const router = express.Router();
 
-// Configura CORS específicamente para las rutas en este archivo
-router.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://skipy.vercel.app");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.header("Access-Control-Allow-Credentials", true);
-  next();
-});
-
-router.post("/api/shorter", createShortLink);
+// Aplica CORS solo a las rutas necesarias
+router.post("/api/shorter", cors(), createShortLink);
 
 router.get("/:slug", redirectToOriginalUrl);
 
