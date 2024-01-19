@@ -9,6 +9,6 @@ const router = express.Router();
 
 router.post("/api/shorter", createShortLink);
 
-router.get("/:slug", redirectToOriginalUrl);
+router.get("/api/shorter/:slug", redirectToOriginalUrl);
 
 export default router;
