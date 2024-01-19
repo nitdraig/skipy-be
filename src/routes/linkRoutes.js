@@ -1,4 +1,3 @@
-// routes/linkRoutes.js
 import express from "express";
 import {
   createShortLink,
